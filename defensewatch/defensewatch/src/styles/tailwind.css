@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #0d1117; /* near-black */
+    --color-foreground: #f0f6ff; /* high-contrast white-blue */
+    --color-border: rgba(125, 133, 144, 0.2); /* muted gray with transparency */
+    --color-input: #1c2128; /* elevated dark gray */
+    --color-ring: #1a237e; /* deep navy blue */
+    
+    /* Card Colors */
+    --color-card: #1c2128; /* elevated dark gray */
+    --color-card-foreground: #f0f6ff; /* high-contrast white-blue */
+    
+    /* Popover Colors */
+    --color-popover: #1c2128; /* elevated dark gray */
+    --color-popover-foreground: #f0f6ff; /* high-contrast white-blue */
+    
+    /* Muted Colors */
+    --color-muted: #1c2128; /* elevated dark gray */
+    --color-muted-foreground: #7d8590; /* muted gray */
+    
+    /* Primary Colors */
+    --color-primary: #1a237e; /* deep navy blue */
+    --color-primary-foreground: #f0f6ff; /* high-contrast white-blue */
+    
+    /* Secondary Colors */
+    --color-secondary: #2e7d32; /* military green */
+    --color-secondary-foreground: #f0f6ff; /* high-contrast white-blue */
+    
+    /* Destructive Colors */
+    --color-destructive: #da3633; /* alert red */
+    --color-destructive-foreground: #f0f6ff; /* high-contrast white-blue */
+    
+    /* Accent Colors */
+    --color-accent: #ff8f00; /* warning amber */
+    --color-accent-foreground: #0d1117; /* near-black */
+    
+    /* Success Colors */
+    --color-success: #238636; /* confirmation green */
+    --color-success-foreground: #f0f6ff; /* high-contrast white-blue */
+    
+    /* Warning Colors */
+    --color-warning: #ff8f00; /* warning amber */
+    --color-warning-foreground: #0d1117; /* near-black */
+    
+    /* Error Colors */
+    --color-error: #d73a49; /* critical red */
+    --color-error-foreground: #f0f6ff; /* high-contrast white-blue */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .tactical-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .pulse-alert {
+    animation: pulse-alert 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-alert {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  .transition-tactical {
+    transition: all 150ms ease-out;
+  }
+  
+  .transition-tooltip {
+    transition: all 300ms ease-out;
+  }
+}
